@@ -5,24 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<body>
+    {% extends 'base.html' %} 
 {% block content %} 
-<h1>Dashboard</h1> 
+<h1>Products</h1> 
 &nbsp; 
 <table class="table"> 
 <tr> 
-<th>URL</th> 
 <th>Name</th> 
-<th>Age</th> 
+<th>Price</th> 
 </tr> 
-    {% for customer in customers %} 
+{% for product in products %} 
 <tr> 
-<td><a href="{% url 'customer' customer.id %}">View</a></td> 
-<td>{{customer.name}}</td> 
-<td>{{customer.age}}</td> 
+<td>{{product.name}}</td> 
+<td>{{product.price}}</td> 
 </tr> 
-    {% endfor %} 
+{% endfor %} 
 </table> 
 <a href="{% url 'home' %}"><button type="button" class="btn btn-success">Home Window</button></a> 
- {% endblock %} 
-
+{% endblock %}
+</body>
 </html>
